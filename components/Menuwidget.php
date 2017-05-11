@@ -1,5 +1,6 @@
 <?php
 namespace app\components;
+use yii;
 use yii\base\Widget;
 use yii\helpers\Html;
 use app\models\UmsRole;
@@ -8,6 +9,7 @@ use app\models\UmsOption;
 
 class Menuwidget extends Widget
 {
+	
 	public $str;
 	public $message;
 	public $menuoptions;
@@ -19,7 +21,9 @@ class Menuwidget extends Widget
 			array_push($rolearr, $values->role_id);
 		}
 		
+		
 		$detailmenu=UmsOption::find()->joinWith('umsRoleOptionMaps')->where(['role_id'=>$rolearr])->all();
+		//print_r($detailmenu);
 		$this->menuoptions=$detailmenu;
 		$paired=$this->generatePair($detailmenu);
 		
@@ -133,7 +137,12 @@ class Menuwidget extends Widget
 				foreach ($this->menuoptions as $values){
 					if($values->option_id==$id)
 					{
-						$return=$values->option_link;
+						if($values->option_link=='#'){
+							$return='javascript:void(0)';
+						}else{
+							$return=Yii::$app->homeUrl.$values->option_link;
+						}
+						
 					}
 				}
 				break;

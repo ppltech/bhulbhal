@@ -7,21 +7,22 @@ use Yii;
 /**
  * This is the model class for table "ums_user".
  *
- * @property integer $user_id
- * @property string $user_access_key
- * @property string $username
- * @property string $password
- * @property integer $user_type
- * @property integer $user_status
- * @property string $additional_id
- * @property string $first_name
- * @property string $last_name
- * @property string $email_id
- * @property string $user_creation_stamp
- * @property integer $user_created_by
- * @property string $user_updated_stamp
- * @property integer $user_updated_by
- *
+ 
+  * @property integer $user_id
+  * @property string $user_access_key
+  * @property string $username
+  * @property string $password
+  * @property integer $user_type
+  * @property integer $user_status
+  * @property string $additional_id
+  * @property string $first_name
+  * @property string $last_name
+  * @property string $email_id
+  * @property string $user_creation_stamp
+  * @property integer $user_created_by
+  * @property string $user_updated_stamp
+  * @property integer $user_updated_by
+  *
  * @property UmsLoginDetails[] $umsLoginDetails
  * @property UmsSessionDetails[] $umsSessionDetails
  * @property UmsUserRoleMap[] $umsUserRoleMaps

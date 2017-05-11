@@ -21,6 +21,10 @@ use Yii;
  * @property string $object_reference_key
  * @property integer $level
  * @property string $icon_class
+ * @property integer $add_data
+ * @property integer $edit_data
+ * @property integer $delete_data
+ * @property integer $view_data
  *
  * @property UmsRoleOptionMap[] $umsRoleOptionMaps
  */
@@ -41,7 +45,7 @@ class UmsOption extends \yii\db\ActiveRecord
     {
         return [
             [['option_name', 'option_type', 'option_area', 'option_status', 'parent_option_id'], 'required'],
-            [['option_type', 'option_area', 'option_status', 'option_order', 'parent_option_id', 'enable_toolbox', 'level'], 'integer'],
+            [['option_type', 'option_area', 'option_status', 'option_order', 'parent_option_id', 'enable_toolbox', 'level', 'add_data', 'edit_data', 'delete_data', 'view_data'], 'integer'],
             [['option_name'], 'string', 'max' => 25],
             [['option_description', 'option_link'], 'string', 'max' => 200],
             [['option_icon', 'object_reference_key', 'icon_class'], 'string', 'max' => 100],
@@ -68,6 +72,10 @@ class UmsOption extends \yii\db\ActiveRecord
             'object_reference_key' => 'Object Reference Key',
             'level' => 'Level',
             'icon_class' => 'Icon Class',
+            'add_data' => 'Add Data',
+            'edit_data' => 'Edit Data',
+            'delete_data' => 'Delete Data',
+            'view_data' => 'View Data',
         ];
     }
 

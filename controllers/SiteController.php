@@ -83,7 +83,6 @@ class SiteController extends Controller
     		if($model->password==md5($password)){
     			$session = new Session();
     			$session->open();
-    			//
     			$session['loggedUser']=$model;
     			return true;
     		}

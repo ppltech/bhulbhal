@@ -7,9 +7,9 @@ use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
-use app\assets\UmsAsset;
+use app\assets\LoginAsset;
 
-UmsAsset::register($this);
+LoginAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>

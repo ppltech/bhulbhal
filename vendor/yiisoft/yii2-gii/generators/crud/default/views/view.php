@@ -18,15 +18,37 @@ use yii\widgets\DetailView;
 /* @var $model <?= ltrim($generator->modelClass, '\\') ?> */
 
 $this->title = $model-><?= $generator->getNameAttribute() ?>;
+$modeltitle = <?= $generator->generateString(Inflector::camel2words(StringHelper::basename($generator->modelClass))) ?>;
+$rawmodelname=<?= $generator->generateString(StringHelper::basename($generator->modelClass)) ?>;
 $this->params['breadcrumbs'][] = ['label' => <?= $generator->generateString(Inflector::pluralize(Inflector::camel2words(StringHelper::basename($generator->modelClass)))) ?>, 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="<?= Inflector::camel2id(StringHelper::basename($generator->modelClass)) ?>-view">
 
-    <h1><?= "<?= " ?>Html::encode($this->title) ?></h1>
+   
 
-    <p>
-        <?= "<?= " ?>Html::a(<?= $generator->generateString('Update') ?>, ['update', <?= $urlParams ?>], ['class' => 'btn btn-primary']) ?>
+
+<section role="main" class="content-body">
+					<header class="page-header">
+						<h2>View <?= "<?= " ?>Html::encode($modeltitle) ?></h2>
+					
+						<div class="right-wrapper pull-right">
+							<ol class="breadcrumbs">
+								<li>
+									<a href="<?= "<?= " ?>Yii::$app->homeUrl ?>dashboard">
+										<i class="fa fa-home"></i>
+									</a>
+								</li>
+								<li><span><?= "<?= " ?>Html::encode($modeltitle) ?></span></li>
+								<li><span>View</span></li>
+							</ol>
+					
+							<a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
+						</div>
+					</header>
+					<div class="row">
+									<div class="col-sm-6">
+										<div class="mb-md">
+										<?= "<?= " ?>Html::a(<?= $generator->generateString('Update') ?>, ['update', <?= $urlParams ?>], ['class' => 'btn btn-primary']) ?>
         <?= "<?= " ?>Html::a(<?= $generator->generateString('Delete') ?>, ['delete', <?= $urlParams ?>], [
             'class' => 'btn btn-danger',
             'data' => [
@@ -34,9 +56,23 @@ $this->params['breadcrumbs'][] = $this->title;
                 'method' => 'post',
             ],
         ]) ?>
-    </p>
-
-    <?= "<?= " ?>DetailView::widget([
+											<a href="<?php echo  Yii::$app->request->baseUrl;?>/<?= "<?= " ?>Html::encode(strtolower($rawmodelname)) ?>" class="btn btn-primary">List of <?= "<?= " ?>Html::encode($modeltitle) ?></a>
+										</div>
+                                        </div>
+                                        
+								</div>
+					<header class="panel-heading">
+								<div class="panel-actions">
+									<a href="#" class="fa fa-caret-down"></a>
+									<a href="#" class="fa fa-times"></a>
+								</div>
+						<h2 class="panel-title">Update <?= "<?= " ?>Html::encode($modeltitle) ?></h2>
+								
+							</header>
+							<div class="row">
+						
+						<div class="col-md-12">
+   <?= "<?= " ?>DetailView::widget([
         'model' => $model,
         'attributes' => [
 <?php
@@ -53,5 +89,9 @@ if (($tableSchema = $generator->getTableSchema()) === false) {
 ?>
         ],
     ]) ?>
+    </div>
+						<!-- col-md-6 -->
+						
+					</div>
+</section>
 
-</div>

@@ -1,4 +1,6 @@
 <?php
+use app\models\UmsViewConfiguration;
+
 /**
  * This is the template for generating the model class of a specified table.
  */
@@ -23,8 +25,28 @@ use Yii;
 /**
  * This is the model class for table "<?= $generator->generateTableName($tableName) ?>".
  *
+ 
+ <?php 
+ 
+$getviewconfigurea=UmsViewConfiguration::find()->where(['table_name'=>$generator->generateTableName($tableName)])->all();
+ if($getviewconfigurea!=''){
+ 	UmsViewConfiguration::deleteAll(['table_name'=>$generator->generateTableName($tableName)]);
+ } 
+ 	$i=1;
+ ?>
 <?php foreach ($tableSchema->columns as $column): ?>
  * @property <?= "{$column->phpType} \${$column->name}\n" ?>
+ <?php 
+ 
+ 
+ 
+ $viewconfigurarion = new UmsViewConfiguration();
+ $viewconfigurarion->table_name=$generator->generateTableName($tableName);
+ $viewconfigurarion->attribute_name=$column->name;
+ $viewconfigurarion->sequence_number=$i;
+ $viewconfigurarion->save();
+ $i++;
+ ?>
 <?php endforeach; ?>
 <?php if (!empty($relations)): ?>
  *

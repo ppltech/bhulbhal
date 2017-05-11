@@ -18,8 +18,8 @@ class AppAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        //'css/site.css',
-    		
+        
+    		'css/site.css',
     		'assets/vendor/bootstrap/css/bootstrap.css',
     		'assets/vendor/font-awesome/css/font-awesome.css',
     		'assets/vendor/magnific-popup/magnific-popup.css',
@@ -29,6 +29,7 @@ class AppAsset extends AssetBundle
     		'assets/stylesheets/theme.css',
     		'assets/stylesheets/skins/default.css',
     		'assets/stylesheets/theme-custom.css'
+    		
     ];
     public $js = [
     		//'assets/vendor/modernizr/modernizr.js',

@@ -23,7 +23,7 @@ body {
 	overflow-y: scroll;
 }
 
-a {
+/* a {
 	color: #cccccc;
 }
 
@@ -33,7 +33,7 @@ a:hover, a:focus {
 
 a:active {
 	color: #bfbfbf;
-}
+} */
 
 /* Layout Base - Main Wrapper	*/
 .body {
@@ -181,7 +181,7 @@ a:active {
 
 	/* Layout Fixed - Inner Wrapper */
 	html.fixed .inner-wrapper {
-		padding-top: 110px;
+		padding-top: 75px;
 	}
 
 	/* Layout Fixed - Content Body */
@@ -2740,9 +2740,9 @@ input {
 	outline: none;
 }
 
-label {
+/* label {
 	font-weight: normal;
-}
+} */
 
 textarea {
 	resize: vertical;
@@ -3583,14 +3583,15 @@ select.input-sm, select.input-lg {
 }
 
 /* Form - Custom Fields */
-.required {
+
+/* .required {
 	display: inline-block;
 	color: #d2322d;
 	font-size: 0.8em;
 	font-weight: bold;
 	position: relative;
 	top: -0.2em;
-}
+} */
 
 label.error {
 	color: #B94A48;
@@ -12371,9 +12372,9 @@ html.dark .simple-compose-box .compose-box-footer {
 }
 
 /* Tables - Basic */
-.table {
+/* .table {
 	width: 100%;
-}
+} */
 
 .table .table {
 	background: transparent;

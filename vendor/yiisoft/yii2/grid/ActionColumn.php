@@ -161,7 +161,7 @@ class ActionColumn extends Column
      * @since 2.0.11
      */
     protected function setTemplate(){
-    	$this->template='{view}';
+    	$this->template='{view} {update} {delete}';
     }
     protected function initDefaultButton($name, $iconName, $additionalOptions = [])
     {

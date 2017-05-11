@@ -6,16 +6,49 @@ use yii\helpers\Html;
 /* @var $model app\models\UmsUser */
 
 $this->title = 'Update Ums User: ' . $model->user_id;
+$modeltitle = 'Ums User';
+$rawmodelname='UmsUser';
 $this->params['breadcrumbs'][] = ['label' => 'Ums Users', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->user_id, 'url' => ['view', 'id' => $model->user_id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Update {modelClass}';
 ?>
-<div class="ums-user-update">
 
-    <h1><?= Html::encode($this->title) ?></h1>
 
+<section role="main" class="content-body">
+					<header class="page-header">
+						<h2><?= Html::encode($this->title) ?></h2>
+					
+						<div class="right-wrapper pull-right">
+							<ol class="breadcrumbs">
+								<li>
+									<a href="<?= Yii::$app->homeUrl ?>dashboard">
+										<i class="fa fa-home"></i>
+									</a>
+								</li>
+								<li><span><?= Html::encode($modeltitle) ?></span></li>
+								<li><span><?= Html::encode($this->title) ?></span></li>
+							</ol>
+					
+							<a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
+						</div>
+					</header>
+					<div class="row">
+									<div class="col-sm-6">
+										<div class="mb-md">
+											<a href="/UMS/<?= Html::encode(strtolower($rawmodelname)) ?>" class="btn btn-primary">List of <?= Html::encode($modeltitle) ?></a>
+										</div>
+                                        </div>
+                                        
+								</div>
+					<header class="panel-heading">
+								<div class="panel-actions">
+									<a href="#" class="fa fa-caret-down"></a>
+									<a href="#" class="fa fa-times"></a>
+								</div>
+						
+								<h2 class="panel-title"><?= Html::encode($this->title) ?></h2>
+							</header>
     <?= $this->render('_form', [
         'model' => $model,
     ]) ?>
-
-</div>
+</section>

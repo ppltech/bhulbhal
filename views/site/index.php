@@ -12,7 +12,7 @@ use yii\widgets\ActiveForm;
 	<div class="panel-body">
 		<?php $form = ActiveForm::begin(); ?>
 		<div class="login-form">
-		    		    <div class="input-box input-left">
+		    <div class="input-box input-left">
 			<label for="username">User Name:</label><br>
 			<input type="text" id="umsuser-username"  name="UmsUser[username]" class="required-entry form-control"  />
 		    </div> 
@@ -30,3 +30,24 @@ use yii\widgets\ActiveForm;
 	    <?php ActiveForm::end(); ?>
 	    </div>
 </div>			
+<script type="text/javascript">
+
+$(function(){
+	$('#formButton').click(function(){
+		var err = 0;
+		$('.validation-advice').remove();
+		$('#w0 .required-entry').each(function(){
+			if(!$.trim($(this).val()).length){
+				err = 1;	
+				//alert('Please enter name');
+				$(this).after('<div class="validation-advice">This is a required field.</div>');
+			}
+		});
+		if(err == 1){
+			return false;
+		}else{
+			$('#w0').submit();
+		}
+	});
+});			
+</script>
